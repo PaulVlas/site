@@ -1,28 +1,25 @@
 git:
- depth: false
-
+  depth: false
 env:
- global:
- - HUGO_VERSION="0.54.0"
- matrix:
- - YOUR_ENCRYPTED_VARIABLE
-
+  global:
+  - HUGO_VERSION="0.54.0"
+  matrix:
+  - YOUR_ENCRYPTED_VARIABLE
+  - secure: Xl2Qko99xvw1+kwkJtsH4K2SyxRD7JC8ZXLJvHVNd3VXoQ80P8tV7nPWJnX9phQfuZtCOiAJYlle2skMeXmrMhzEjts/ulqBToXbdcu3fB7QbnGu//enF9ZZfYFF0aIddn+GtQ7Ef7hnaK85c2TGcC1jbj2ZHS6KnVJ+oCzZBr1aBFBZFDmZnL3JhF/mKF/SrXltPHa4GNukirkzWDNX7FFwP/2J5HjuFKLqbeN5EuJaOsGW9B/kmWfahOidUTdh6WmOrZ59RzwcPHpUytRS3uV7Vujd7F9ohV7yLBCORugGo0PW43c7yFkc+yCV9nlPyR54s3epggk9i5/zEmSUOyB+T+z0jZQCCLKTdidSlcBO7U3tQtWGEb5cvZb8HXTBXRGr4E0z9n/ZDd81vfWa4y7B7NI8lC0n0XzQGUNwYPZjksPG5jRmh+1uvbS35KFE1U+7xdhsxgtPPbYrND0jQxstJW0vhi3rbeFATzFueQ0kWjG7CSwF51Ij+wMqmxEGQ5yr7O5nBuCS6wzQX5MORbQyNM3kxgAqqQL/Pftz0jMu4jriCkPu/dhzinRxApOO4MLNmp+oqx7uwYAlS7QG+QKlrdGP/47CrVXXOp+dm07NAay7QDHZypBw1aVh0yayoGhKo1D+9b/oQGoroaMEdiJLEiRALqchDhAbt85n2Wg=
 install:
- - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
- - tar xf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
- - mv hugo ~/bin/
-
+- wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+- tar xf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+- mv hugo ~/bin/
 script:
- - hugo --gc --minify
-
+- hugo --gc --minify
 deploy:
- provider: pages
- skip-cleanup: true
- github-token: $GITHUB_TOKEN
- keep-history: true
- local-dir: public
- repo: 2IOA0-Group-26AB/2IOA0
- target-branch: master
- verbose: true
- on:
- branch: master
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  keep-history: true
+  local-dir: public
+  repo: 2IOA0-Group-26AB/2IOA0
+  target-branch: master
+  verbose: true
+  on: 
+  branch: master
